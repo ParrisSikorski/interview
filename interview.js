@@ -4,6 +4,14 @@ function Interview() {
 	console.log("Interview started");
 }
 /**
+* Factory of sorting functions
+* @param {string} Name of algorithm
+* @return {function} Returns a sorting function based on algorithm passed
+*/
+Interview.prototype.sorter = function(algorithm) {
+	
+}
+/**
 * Fizzbuzz
 * @param {number} count Number of iterations
 */
