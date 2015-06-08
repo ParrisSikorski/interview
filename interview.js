@@ -88,6 +88,6 @@ Interview.prototype.permuteString = function(str) {
 	return permute(str, 0) || permutations;
 };
 
-var interview = new Interview();
+var i = new Interview();
 
 
