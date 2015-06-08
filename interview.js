@@ -100,18 +100,10 @@ Interview.prototype.sorter = function(algorithm) {
 		selection: function(nums, proceed) {
 
 		},
-		/**
-		* Handles returning correct method and allows extra actions
-		* @params {string} algorithm Name of algorithm received from sorter method
-		* @return {function} Returns the correct method associated with the algorithm
-		*/
-		controller: function(algorithm) {
-			console.log(algorithm[0].toUpperCase() + algorithm.slice(1) + " sorter function returned");
-			return this[algorithm.toLowerCase()];
-		}
 	}
 
-	return fns.controller(algorithm).bind(fns) || "No sorting algorithm by that name found."
+	console.log(algorithm[0].toUpperCase() + algorithm.slice(1) + " sorter function returned");
+	return fns[algorithm].bind(fns) || "No sorting algorithm by that name found."
 }
 /**
 * Fizzbuzz
