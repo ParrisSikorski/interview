@@ -8,8 +8,33 @@ function Interview() {
 * @param {string} Name of algorithm
 * @return {function} Returns a sorting function based on algorithm passed
 */
+var nums = [1,2,3,234213,23,41,1234];
 Interview.prototype.sorter = function(algorithm) {
+	var fns = {
+		/**
+		* @param {array} nums An array of numbers
+		*/
+		bubble: function(nums, proceed) {
+			if (proceed !== undefined && !proceed) { return nums; }
+			var swapped = false;
+			var nums = nums.slice();
+			for (var i = 0; i < nums.length - 1; i++) {
+				if (nums[i] > nums[i + 1]) {
+					var temp = nums[i];
+					nums[i] = nums[i + 1];
+					nums[i + 1] = temp;
+					swapped = true;
+				}
+			}
+		
+			return this.bubble(nums, swapped);
+		},
+		sinking: function(nums, proceed) {
+			return this.bubble(nums, proceed);
+		}
+	}
 	
+	return fns[algorithm].bind(fns) || "No sorting algorithm by that name found."
 }
 /**
 * Fizzbuzz
@@ -55,3 +80,5 @@ Interview.prototype.permuteString = function(str) {
 };
 
 var interview = new Interview();
+
+
