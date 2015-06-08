@@ -56,7 +56,6 @@ Interview.prototype.permuteString = function(str) {
 * @param {string} Name of algorithm
 * @return {function} Returns a sorting function based on algorithm passed
 */
-var nums = [1,2,3,234213,23,41,1234];
 Interview.prototype.sorter = function(algorithm) {
 	var fns = {
 		/**
