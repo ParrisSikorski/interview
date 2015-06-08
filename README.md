@@ -8,7 +8,7 @@ interview
 ```
 Instantiation and instance to use its methods
 ```javascript
-	var interview = new Interview();
+var interview = new Interview();
 ```
 
 ## Contribute
