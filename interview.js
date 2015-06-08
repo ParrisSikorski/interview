@@ -1,5 +1,4 @@
 "use strict"
-
 function Interview() {
 	console.log("Interview started");
 }
