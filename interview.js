@@ -3,6 +3,47 @@
 function Interview() {
 	console.log("Interview started");
 }
+/** 
+* Find all permutations of a single word string
+* @param {string} str Single word string
+* @return {array} Returns an array with all permutations
+*/
+Interview.prototype.permuteString = function(str) {
+	var permutations = [];
+	
+	function permute(_str, start) {
+		if (start === str.length - 1) { return false }
+		for (var i = start; i < _str.length; i++) {
+			var letters = _str.split("");
+			letters[start] = [letters[i], letters[i] = letters[start]][0];			
+			var word = letters.join("");
+			if (start === _str.length - 2) {
+				permutations[permutations.length] = word;
+			}
+			permute(word, start + 1);
+		}
+	}
+
+	return permute(str, 0) || permutations;
+};
+/**
+* @TODO Write a method that checks if a string is an anagram
+* @param {string} str String to be checked
+* @return {boolean}
+*/
+Interview.prototype.checkAnagram = function(str) {
+
+}
+/**
+* @TODO Write a method that calculates the possible totals and occurences of rolling a certain number 
+*   with a x amount of dice and y amount of sides, assume all dice have same amount of sides
+* @param {number} dice Number of dice
+* @param {number} sides Number of sides each dice has
+* @return {object} Returns an object with possible values[key] and total combinations[value]  
+*/
+Interview.prototype.possibleDiceRolls = function(dice, sides) {
+
+}
 /**
 * Factory of sorting functions
 * @param {string} Name of algorithm
@@ -63,47 +104,6 @@ Interview.prototype.fizzBuzz = function(count) {
 			console.log(i);
 		}
 	}
-}
-/** 
-* Find all permutations of a single word string
-* @param {string} str Single word string
-* @return {array} Returns an array with all permutations
-*/
-Interview.prototype.permuteString = function(str) {
-	var permutations = [];
-	
-	function permute(_str, start) {
-		if (start === str.length - 1) { return false }
-		for (var i = start; i < _str.length; i++) {
-			var letters = _str.split("");
-			letters[start] = [letters[i], letters[i] = letters[start]][0];			
-			var word = letters.join("");
-			if (start === _str.length - 2) {
-				permutations[permutations.length] = word;
-			}
-			permute(word, start + 1);
-		}
-	}
-
-	return permute(str, 0) || permutations;
-};
-/**
-* @TODO Write a method that checks if a string is an anagram
-* @param {string} str String to be checked
-* @return {boolean}
-*/
-Interview.prototype.checkAnagram = function(str) {
-
-}
-/**
-* @TODO Write a method that calculates the possible totals and occurences of rolling a certain number 
-*   with a x amount of dice and y amount of sides, assume all dice have same amount of sides
-* @param {number} dice Number of dice
-* @param {number} sides Number of sides each dice has
-* @return {object} Returns an object with possible values[key] and total combinations[value]  
-*/
-Interview.prototype.possibleDiceRolls = function(dice, sides) {
-
 }
 
 var i = new Interview();
