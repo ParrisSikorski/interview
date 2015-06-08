@@ -31,10 +31,18 @@ Interview.prototype.sorter = function(algorithm) {
 		},
 		sinking: function(nums, proceed) {
 			return this.bubble(nums, proceed);
+		},
+		/**
+		* Handles returning correct method
+		* Allows for extra actions
+		*/
+		controller: function(algorithm) {
+			console.log(algorithm[0].toUpperCase() + algorithm.slice(1) + " sorter function returned");
+			return this[algorithm.toLowerCase()];
 		}
 	}
-	
-	return fns[algorithm].bind(fns) || "No sorting algorithm by that name found."
+
+	return fns.controller(algorithm).bind(fns) || "No sorting algorithm by that name found."
 }
 /**
 * Fizzbuzz
