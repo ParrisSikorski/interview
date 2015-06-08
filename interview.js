@@ -3,6 +3,14 @@
 function Interview() {
 	console.log("Interview started");
 }
+/**
+* @TODO Write a method that sorts an array in random order
+* @param {array} arr An array of any types
+* @return {array} Returns the randomized array
+*/
+Interview.prototype.randomizeArr = function(arr) {
+
+},
 /** 
 * Find all permutations of a single word string
 * @param {string} str Single word string
@@ -54,6 +62,8 @@ Interview.prototype.sorter = function(algorithm) {
 	var fns = {
 		/**
 		* @param {array} nums An array of numbers
+		* @param {boolean} proceed A boolean of whether to continue recursion
+		* @return {array} Returns shallow copy of sorted array
 		*/
 		bubble: function(nums, proceed) {
 			if (proceed !== undefined && !proceed) { return nums; }
@@ -70,8 +80,27 @@ Interview.prototype.sorter = function(algorithm) {
 		
 			return this.bubble(nums, swapped);
 		},
+		/**
+		* @see fns.bubble
+		*/
 		sinking: function(nums, proceed) {
 			return this.bubble(nums, proceed);
+		},
+		/**
+		* @TODO 
+		* @param {array} nums An array of numbers
+		* @return {array} Returns shallow copy of sorted array
+		*/
+		insertion: function(nums, proceed) {
+
+		},
+		/**
+		* @TODO 
+		* @param {array} nums An array of numbers
+		* @return {array} Returns shallow copy of sorted array
+		*/
+		selection: function(nums, proceed) {
+
 		},
 		/**
 		* Handles returning correct method and allows extra actions
