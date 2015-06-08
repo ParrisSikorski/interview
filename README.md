@@ -6,7 +6,7 @@ interview
 ```html
 <script src='interview.js'></script>
 ```
-Instantiation an instance to use its methods
+Instantiate an instance to use its methods
 ```javascript
 var interview = new Interview();
 ```
