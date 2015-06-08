@@ -33,9 +33,9 @@ Interview.prototype.sorter = function(algorithm) {
 			return this.bubble(nums, proceed);
 		},
 		/**
+		* Handles returning correct method and allows extra actions
 		* @params {string} algorithm Name of algorithm received from sorter method
 		* @return {function} Returns the correct method associated with the algorithm
-		* Handles returning correct method and allows extra actions
 		*/
 		controller: function(algorithm) {
 			console.log(algorithm[0].toUpperCase() + algorithm.slice(1) + " sorter function returned");
